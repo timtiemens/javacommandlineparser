@@ -2,6 +2,21 @@
 Java command-line parsing libraries
 ===================================
 
+Link to raw JSON file
+---------------------
+
+The raw .json file is available from this link: <https://raw.githubusercontent.com/timtiemens/javacommandlineparser/master/java-parsers.json>
+
+
+Top Ranking Java command-line parsing libraries
+-----------------------------------------------
+1. [JCommander](http://jcommander.org/)
+2. [picocli](http://picocli.info)
+3. [args4j](http://args4j.kohsuke.org/)
+4. [JewelCLI](http://jewelcli.lexicalscope.com/)
+
+
+
 Alphabetical list of Java command-line parsing libraries
 --------------------------------------------------------
 * [Airline](https://github.com/airlift/airline)
@@ -41,14 +56,6 @@ Alphabetical list of Java command-line parsing libraries
 * [TE-Code Command](http://te-code.sourceforge.net/)
 
 
-Top Ranking Java command-line parsing libraries
------------------------------------------------
-1 [JCommander](http://jcommander.org/)
-2 [picocli](http://picocli.info)
-3 [args4j](http://args4j.kohsuke.org/)
-4 [JewelCLI](http://jewelcli.lexicalscope.com/)
-
-
 
 References
 ----------
@@ -61,7 +68,7 @@ References
   2018 September sorted by popularity: commons-CLI, JCommander, args4j, jopt-simple, scopt, argparse4j, Airline, JSAP.
   <https://mvnrepository.com/open-source/command-line-parsers>
 * stackoverflow 2008 December
-    <https://stackoverflow.com/questions/367706/how-do-i-parse-command-line-arguments-in-java>
+     <https://stackoverflow.com/questions/367706/how-do-i-parse-command-line-arguments-in-java>
 * stackoverflow 2009 October (marked duplicate)
     <https://stackoverflow.com/questions/1524661/the-best-cli-parser-for-java>
 * stackoverflow 2011 September

@@ -2,6 +2,24 @@
 Java command-line parsing libraries
 ===================================
 
+Link to raw JSON file
+---------------------
+
+The raw .json file is available from this link: <https://raw.githubusercontent.com/timtiemens/javacommandlineparser/master/java-parsers.json>
+
+
+Top Ranking Java command-line parsing libraries
+-----------------------------------------------
+<% [1, 2, 3, 4, 5].each {
+      def number = it
+      javaLibraries.each {
+         if (it.review && it.review.rank && it.review.rank == number) {
+             println "" + number + ". [" + it.name + "](" + it.url + ")"
+         }
+      }
+   } %>
+
+
 Alphabetical list of Java command-line parsing libraries
 --------------------------------------------------------
 <% javaLibraries.each {
@@ -10,17 +28,6 @@ Alphabetical list of Java command-line parsing libraries
          extra += " (" + it.language + ")"
       }
       println "* [" + it.name + "](" + it.url + ")" + extra
-   } %>
-
-Top Ranking Java command-line parsing libraries
------------------------------------------------
-<% [1, 2, 3, 4, 5].each {
-      def number = it
-      javaLibraries.each {
-         if (it.review && it.review.rank && it.review.rank == number) {
-             println "" + number + " [" + it.name + "](" + it.url + ")"
-         }
-      }
    } %>
 
 
