@@ -1,0 +1,45 @@
+
+Java command-line parsing libraries
+===================================
+
+Alphabetical list of Java command-line parsing libraries
+--------------------------------------------------------
+<% javaLibraries.each {
+      extra = ""
+      if (it.language && !it.language.equalsIgnoreCase("java")) {
+         extra += " (" + it.language + ")"
+      }
+      println "* [" + it.name + "](" + it.url + ")" + extra
+   } %>
+
+Top Ranking Java command-line parsing libraries
+-----------------------------------------------
+<% [1, 2, 3, 4, 5].each {
+      def number = it
+      javaLibraries.each {
+         if (it.review && it.review.rank && it.review.rank == number) {
+             println "" + number + " [" + it.name + "](" + it.url + ")"
+         }
+      }
+   } %>
+
+
+References
+----------
+* Java Command-Line Interfaces (Part N of 30)
+   number 1 covers Commons-CLI, number 2 covers args4j,
+     number 4 covers Commandline, number 21 covers Airline, number 28 covers getopt4j, and
+     number 30 is a summation and "5 most likely to succeed" (commons-CLI, args4j, JCommander, JewelCLI, picocli) section.
+  <http://marxsoftware.blogspot.com/> - See 2017 June to November
+* Maven Repository Command Line Parsers category
+  2018 September sorted by popularity: commons-CLI, JCommander, args4j, jopt-simple, scopt, argparse4j, Airline, JSAP.
+  <https://mvnrepository.com/open-source/command-line-parsers>
+* stackoverflow 2008 December
+     <https://stackoverflow.com/questions/367706/how-do-i-parse-command-line-arguments-in-java>
+* stackoverflow 2009 October (marked duplicate)
+    <https://stackoverflow.com/questions/1524661/the-best-cli-parser-for-java>
+* stackoverflow 2011 September
+    <https://stackoverflow.com/questions/7341683/parsing-arguments-to-a-java-command-line-program/7341992>
+* JewelCli alternatives list
+    <http://jewelcli.lexicalscope.com/related.html>
+

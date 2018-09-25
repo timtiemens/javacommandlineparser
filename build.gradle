@@ -1,0 +1,77 @@
+apply plugin: 'base'
+
+task generateAll() {
+     dependsOn 'generateListHtml'
+     dependsOn 'generateReadme'
+}
+
+task generateAllOrdered(type: GradleBuild) {
+     tasks = [ 'generateReadme', 'generateListHtml' ]
+}
+
+task generateListHtml(type: RunGroovyTemplateTask) {
+     inputTemplate = file('templates/htmllist.mte')
+     inputJson = file('java-parsers.json')
+     outputFilename = "htmllist.html";
+}
+
+task generateListCsv(type: RunGroovyTemplateTask) {
+     inputTemplate = file('templates/csvlist.mte')
+     inputJson = file('java-parsers.json')
+     outputFilename = "csvlist.csv";
+}
+
+task generateReadme(type: RunGroovyTemplateTask) {
+    inputTemplate = file('templates/ReadmeMd.ste')
+     inputJson = file('java-parsers.json')
+     outputFilename = "Readme.md";
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.7'
+}
+
+
+class RunGroovyTemplateTask extends DefaultTask {
+      @Input
+      File inputTemplate
+
+      @Input
+      File inputJson
+
+      @Input
+      String outputFilename
+      
+      @OutputDirectory
+      File generatedDir = project.file("${project.buildDir}/templateOutput")
+
+      @TaskAction
+      void perform() {
+          def jsonText = inputJson.getText()
+          def slurper = new groovy.json.JsonSlurper()
+          def model = slurper.parseText(jsonText)
+
+          def templateText = inputTemplate.getText()
+
+          def engine
+          def templateFileAsString = inputTemplate.toString()
+          if (templateFileAsString.endsWith(".ste")) {
+              engine = new groovy.text.SimpleTemplateEngine()
+          } else if (templateFileAsString.endsWith(".mte")) {
+               def config = new groovy.text.markup.TemplateConfiguration()
+               config.setAutoIndent(true)
+               config.setAutoEscape(true)
+               engine = new groovy.text.markup.MarkupTemplateEngine(config)
+          } else {
+               print("ERROR")
+               System.exit(1)
+          }
+
+          def template = engine.createTemplate(templateText)
+          def output = template.make(model)
+
+          new File(generatedDir, outputFilename).text = output
+
+      }
+}

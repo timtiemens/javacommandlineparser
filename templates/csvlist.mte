@@ -1,0 +1,64 @@
+fieldsFeatures = ['annotation', 'keyvalue', 'shortAndLongNames']
+fieldsReviews = ['rank', 'notes']
+fields = ['id', 'name', 'url', 'rank']
+fields.addAll(fieldsFeatures)
+fields.add('notes')
+
+def fetchFeature(lib, key) {
+  def ret = ""
+  if (lib && lib['features'] && lib['features'][key]) {
+     ret = "" + lib['features'][key]
+  }
+  return ret
+}
+def fetchReview(lib, key) {
+ def ret = ""
+  if (lib && lib['review'] && lib['review'][key]) {
+     ret = "" + lib['review'][key]
+  }
+  return ret
+}
+def field2fetch = [:]
+field2fetch['rank'] = { lib -> lib && lib['review'] && lib['review']['rank'] ?
+                               "" + lib['review']['rank'] : "" }
+fieldsFeatures.each { field ->
+   field2fetch[field] = { lib -> fetchFeature(lib, field) }
+}
+fieldsReviews.each { field ->
+   field2fetch[field] = { lib -> fetchReview(lib, field) }
+}
+
+yield "#"
+sep = ""
+fields.each {
+    yield sep
+    yield it
+    sep = ","
+}
+newLine()
+
+
+
+javaLibraries.each { lib ->
+    sep = ""
+    fields.each { field ->
+        yield sep
+        value = lib[field] == null ? "" : lib[field]
+        if (field2fetch.containsKey(field)) {
+            value = field2fetch[field](lib)
+        }
+        // CSV escaping
+        // &quot;String&quot;
+        if ((value.indexOf("&quot;") != -1) || (value.indexOf("\"") != -1) || (value.indexOf(",") != -1)) {
+            yieldUnescaped '\"'
+            def repl = value.replaceAll("&quot;", "\"")
+            repl = repl.replaceAll("\"", "\"\"")
+            yieldUnescaped repl
+            yieldUnescaped '\"'
+        } else {
+            yieldUnescaped value
+        }
+        sep = ","
+    }
+    newLine()    
+}

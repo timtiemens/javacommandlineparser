@@ -1,0 +1,273 @@
+{
+  "javaLibraries": [
+    {
+      "id": "airline",
+      "url": "https://github.com/airlift/airline",
+      "name": "Airline",
+      "features": {
+        "annotation": true
+      }
+    },
+    {
+      "id": "argot",
+      "url": "http://software.clapper.org/argot/",
+      "name": "argot",
+      "language": "scala"
+    },
+    {
+      "id": "argparse4j",
+      "url": "https://github.com/tatsuhiro-t/argparse4j",
+      "name": "argparse4j"
+    },
+    {
+      "id": "argparser",
+      "url": "http://www.cs.ubc.ca/spider/lloyd/java/argparser.html",
+      "name": "argparser",
+      "features": {
+        "keyvalue": true
+      },
+      "review": {
+        "rank": 24,
+        "dateOfReview": "2018-07",
+        "notes": "create individual options, where options are \"holders\", parse() into the holders"
+      }
+    },
+    {
+      "id": "args4j",
+      "url": "http://args4j.kohsuke.org/",
+      "name": "args4j",
+      "features": {
+        "annotation": true,
+        "shortAndLongNames": true
+      },
+      "review": {
+        "rank": 3,
+        "dateOfReview": "2018-07",
+        "notes": "field-based, unclear if \"--long-Name\" is supported"
+      }
+    },
+    {
+      "id": "clajr",
+      "url": "http://clajr.sourceforge.net/",
+      "name": "clajr"
+    },
+    {
+      "id": "cli-parser",
+      "url": "http://code.google.com/p/cli-parser/",
+      "name": "cli-parser"
+    },
+    {
+      "id": "cmdln",
+      "url": "http://ostermiller.org/utils/CmdLn.html",
+      "name": "CmdLn"
+    },
+    {
+      "id": "commandline",
+      "url": "https://github.com/jankroken/commandline",
+      "name": "Commandline"
+    },
+    {
+      "id": "docopt.java",
+      "url": "https://github.com/docopt/docopt.java",
+      "name": "DocOpt.java"
+    },
+    {
+      "id": "dolphin-getopt",
+      "url": "http://dolphin.sourceforge.net/getopt/",
+      "name": "dolphin getopt"
+    },
+    {
+      "id": "dpml-cli",
+      "url": "http://www.dpml.net/util/cli/index.html",
+      "name": "DPML CLI (Jakarta Commons CLI2 fork)"
+    },
+    {
+      "id": "dr-matthias-laux",
+      "url": "http://www.javaworld.com/javaworld/jw-08-2004/jw-0816-command.html",
+      "name": "Dr. Matthias Laux"
+    },
+    {
+      "id": "jakarta-commons-cli",
+      "url": "http://jakarta.apache.org/commons/cli/",
+      "name": "Jakarta Commons CLI",
+      "features": {
+        "keyvalue": true
+      },
+      "review": {
+        "rank": 22,
+        "dateOfReview": "2018-07",
+        "notes": "like JArgs, except key is \"String\", not an Option object"
+      }
+    },
+    {
+      "id": "jargo",
+      "url": "https://github.com/Softhouse/jargo",
+      "name": "jargo"
+    },
+    {
+      "id": "jargp",
+      "url": "http://jargp.sourceforge.net/",
+      "name": "jargp"
+    },
+    {
+      "id": "jargs",
+      "url": "http://jargs.sourceforge.net/",
+      "name": "JArgs",
+      "features": {
+        "keyvalue": true
+      },
+      "review": {
+        "rank": 21,
+        "dateOfReview": "2018-07",
+        "notes": "single \"parse\" call with array of options, key is an Option object"
+      }
+    },
+    {
+      "id": "java-getopt",
+      "url": "http://www.urbanophile.com/arenn/hacking/download.html",
+      "name": "java-getopt"
+    },
+    {
+      "id": "jbock",
+      "url": "https://github.com/h908714124/jbock",
+      "name": "jbock",
+      "features": {
+        "annotation": true
+      }
+    },
+    {
+      "id": "jclap",
+      "url": "http://www.snaq.net/java/JCLAP/",
+      "name": "JCLAP"
+    },
+    {
+      "id": "jcmdline",
+      "url": "http://jcmdline.sourceforge.net/",
+      "name": "jcmdline"
+    },
+    {
+      "id": "jcommander",
+      "url": "http://jcommander.org/",
+      "name": "JCommander",
+      "version": "v1.71",
+      "features": {
+        "annotation": true,
+        "shortAndLongNames": true
+      },
+      "review": {
+        "rank": 1,
+        "dateOfReview": "2018-07",
+        "notes": "good documentation, custom parser, validation"
+      }
+    },
+    {
+      "id": "jcommando",
+      "url": "http://jcommando.sourceforge.net/",
+      "name": "JCommando",
+      "review": {
+        "rank": 26,
+        "dateOfReview": "2018-07",
+        "notes": "generates .java, but still requires an additional .jar"
+      }
+    },
+    {
+      "id": "jewelcli",
+      "url": "http://jewelcli.lexicalscope.com/",
+      "name": "JewelCLI",
+      "features": {
+        "annotation": true,
+        "shortAndLongNames": true,
+      },
+      "review": {
+        "rank": 4,
+        "dateOfReview": "2018-07",
+        "shortAndLongNames": true,
+        "notes": "interface-based but can be instance-based with setters"
+      }
+    },
+    {
+      "id": "jopt-simple",
+      "url": "http://jopt-simple.sourceforge.net",
+      "name": "JOpt simple",
+      "features": {
+        "keyvalue": true
+      },
+      "review": {
+        "rank": 10,
+        "dateOfReview": "2018-07",
+        "notes": ""
+      }
+    },
+    {
+      "id": "jsap",
+      "url": "http://www.martiansoftware.com/jsap/",
+      "name": "JSAP",
+      "features": {
+        "keyvalue": true
+      },
+      "review": {
+        "rank": 25,
+        "dateOfReview": "2018-07",
+        "notes": "old (2008) not well documented"
+      }
+    },
+    {
+      "id": "naturalcli",
+      "url": "http://naturalcli.sourceforge.net/",
+      "name": "naturalcli"
+    },
+    {
+      "id": "object-mentor-cli",
+      "url": "http://www.objectmentor.com/resources/articles/Clean_Code_Args.pdf",
+      "name": "Object Mentor CLI article (more about refactoring and TDD)"
+    },
+    {
+      "id": "optional",
+      "url": "https://github.com/alexy/optional",
+      "name": "optional",
+      "language": "scala",
+      "extraInfo": "multiple github forks"
+    },
+    {
+      "id": "parse-cmd",
+      "url": "http://code.google.com/p/parse-cmd/",
+      "name": "parse-cmd"
+    },
+    {
+      "id": "picocli",
+      "url": "http://picocli.info",
+      "name": "picocli",
+      "version": "v3.3",
+      "features": {
+        "annotation": true,
+        "shortAndLongNames": true
+      },
+      "review": {
+        "rank": 2,
+        "dateOfReview": "2018-07",
+        "notes": "good documentation - documentation looks suspiciously like it is patterned after JCommander"
+      }
+    },
+    {
+      "id": "ritopt",
+      "url": "http://ritopt.sourceforge.net/",
+      "name": "ritopt"
+    },
+    {
+      "id": "rop",
+      "url": "http://ryenus.github.io/rop/",
+      "name": "Rop"
+    },
+    {
+      "id": "scopt",
+      "url": "https://github.com/jstrachan/scopt",
+      "name": "scopt",
+      "language": "scala"
+    },
+    {
+      "id": "te-code-command",
+      "url": "http://te-code.sourceforge.net/",
+      "name": "TE-Code Command"
+    }
+  ]
+}

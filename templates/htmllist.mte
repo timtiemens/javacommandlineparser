@@ -1,0 +1,8 @@
+
+ul {
+    javaLibraries.each { lib ->
+      li {
+        a(href:lib.url, lib.name)
+        }  newLine()
+    }
+}
