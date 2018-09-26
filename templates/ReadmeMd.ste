@@ -22,20 +22,69 @@ Top Ranking Java command-line parsing libraries
 
 Alphabetical list of Java command-line parsing libraries
 --------------------------------------------------------
-<% javaLibraries.each {
-      extra = ""
-      if (it.language && !it.language.equalsIgnoreCase("java")) {
-         extra += " (" + it.language + ")"
+Below is a table showing Java command-line parsing libraries, sorted by name.  "Rank" is my rank for the library (1 to 4, or blank).  "Annotation" indicates the library uses Java annotations for argument metadata (i.e. "good").  "KeyValue" indicates that the library uses Java map structures to store and access the arguments (i.e. "bad").
+
+<% def headers = ['Name', 'Rank', 'Lang', 'Annotation', 'KeyValue', 'Notes']
+   def sep = "|"
+   headers.each {
+      print sep
+      sep = " | "
+      print it
+   }
+   println "" + "|"
+
+   sep = "|"   
+   headers.each {
+      print sep
+      sep = "|"
+      print "---"
+   }
+   println "" + sep
+
+   javaLibraries.each {
+      def name = "[" + it.name + "](" + it.url + ")"
+      def rank = ""
+      def lang = "java"
+      def annot = ""
+      def keyvalue = ""
+      def notes = ""
+      def yesMark = "X"
+      if (it.urlIsDead) {
+         name = name + " dead link"
       }
-      println "* [" + it.name + "](" + it.url + ")" + extra
-   } %>
+      if (it.features && it.features.annotation) {
+         annot = yesMark
+      }
+      if (it.features && it.features.keyvalue) {
+         keyvalue = yesMark
+      }
+      if (it.review && it.review.rank < 5) {
+         rank = it.review.rank
+      }
+      if (it.extraInfo) {
+          notes = notes + it.extraInfo
+      }
+      if (it.review && it.review.notes) {
+          notes = notes + it.review.notes
+      }
+      if (it.language && ! it.language.equalsIgnoreCase("java")) {
+          lang = it.language
+      }
+
+      println("|" + name + "|" + rank + "|" + lang +
+              "|" + annot + "|" + keyvalue +
+              "|" + notes)
+   }
+%>
+
 
 
 References
 ----------
 * Java Command-Line Interfaces (Part N of 30)
    number 1 covers Commons-CLI, number 2 covers args4j,
-     number 4 covers Commandline, number 21 covers Airline, number 28 covers getopt4j, and
+   number 7 covers JCommander, number 21 covers Airline,
+   number 28 covers getopt4j, and
      number 30 is a summation and "5 most likely to succeed" (commons-CLI, args4j, JCommander, JewelCLI, picocli) section.
   <http://marxsoftware.blogspot.com/> - See 2017 June to November
 * Maven Repository Command Line Parsers category
@@ -49,4 +98,5 @@ References
     <https://stackoverflow.com/questions/7341683/parsing-arguments-to-a-java-command-line-program/7341992>
 * JewelCli alternatives list
     <http://jewelcli.lexicalscope.com/related.html>
-
+* Compare JCommander and picoli
+   <https://java.libhunt.com/compare-picocli-vs-jcommander?rel=cmp-lib>

@@ -1,5 +1,8 @@
 apply plugin: 'base'
 
+
+def commonOutputDirectory = "${project.buildDir}/templateOutput/"
+
 task generateAll() {
      dependsOn 'generateListHtml'
      dependsOn 'generateReadme'
@@ -12,39 +15,37 @@ task generateAllOrdered(type: GradleBuild) {
 task generateListHtml(type: RunGroovyTemplateTask) {
      inputTemplate = file('templates/htmllist.mte')
      inputJson = file('java-parsers.json')
-     outputFilename = "htmllist.html";
+     outputFile = file(commonOutputDirectory + "htmllist.html")
 }
 
 task generateListCsv(type: RunGroovyTemplateTask) {
      inputTemplate = file('templates/csvlist.mte')
      inputJson = file('java-parsers.json')
-     outputFilename = "csvlist.csv";
+     outputFile = file(commonOutputDirectory + "csvlist.csv")
 }
 
 task generateReadme(type: RunGroovyTemplateTask) {
-    inputTemplate = file('templates/ReadmeMd.ste')
+     inputTemplate  = new File('templates/ReadmeMd.ste')
      inputJson = file('java-parsers.json')
-     outputFilename = "Readme.md";
+     outputFile = new File('build/templateOutput/Readme.md')
 }
 
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.7'
+task wrapperOld(type: Wrapper) {
+    gradleVersion = '4.8'
 }
 
 
 class RunGroovyTemplateTask extends DefaultTask {
-      @Input
-      File inputTemplate
+      @InputFile
+      def File inputTemplate
 
-      @Input
-      File inputJson
+      @InputFile
+      def File inputJson
 
-      @Input
-      String outputFilename
-      
-      @OutputDirectory
-      File generatedDir = project.file("${project.buildDir}/templateOutput")
+     // new File(project.file("${project.buildDir}/templateOutput"), "filename")
+      @OutputFile
+      def File outputFile
 
       @TaskAction
       void perform() {
@@ -71,7 +72,6 @@ class RunGroovyTemplateTask extends DefaultTask {
           def template = engine.createTemplate(templateText)
           def output = template.make(model)
 
-          new File(generatedDir, outputFilename).text = output
-
+          outputFile.text = output
       }
 }
