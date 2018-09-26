@@ -12,6 +12,7 @@
       "id": "argot",
       "url": "http://software.clapper.org/argot/",
       "name": "argot",
+      "extraInfo": "abandoned - see scopt",
       "language": "scala"
     },
     {
@@ -59,17 +60,32 @@
     {
       "id": "cmdln",
       "url": "http://ostermiller.org/utils/CmdLn.html",
-      "name": "CmdLn"
+      "name": "CmdLn",
+      "features": {
+	"keyvalue": true
+      }
     },
     {
       "id": "commandline",
       "url": "https://github.com/jankroken/commandline",
-      "name": "Commandline"
+      "name": "Commandline",
+      "features": {
+	"annotation": true,
+	"shortAndLongNames": true
+      }
     },
     {
       "id": "docopt.java",
       "url": "https://github.com/docopt/docopt.java",
-      "name": "DocOpt.java"
+      "name": "DocOpt.java",
+      "features": {
+	"keyvalue": true,
+      },
+      "review" : {
+	"rank": 80,
+	"dateOfReview": "2018-09",
+	"notes": "weird String-based approach to defining argument names and help at the same time.  port of docopt."
+      }
     },
     {
       "id": "dolphin-getopt",
@@ -79,7 +95,8 @@
     {
       "id": "dpml-cli",
       "url": "http://www.dpml.net/util/cli/index.html",
-      "name": "DPML CLI (Jakarta Commons CLI2 fork)"
+      "name": "DPML CLI",
+      "extraInfo": "Jakarta Commons CLI2 fork"
     },
     {
       "id": "dr-matthias-laux",
@@ -102,10 +119,13 @@
     {
       "id": "jargo",
       "url": "https://github.com/Softhouse/jargo",
-      "name": "jargo"
+      "name": "jargo",
+      "features": {
+	"keyvalue": true
+      }
     },
     {
-      "id": "jargp",
+      "id": "JArgp",
       "url": "http://jargp.sourceforge.net/",
       "name": "jargp"
     },
@@ -219,7 +239,9 @@
     {
       "id": "object-mentor-cli",
       "url": "http://www.objectmentor.com/resources/articles/Clean_Code_Args.pdf",
-      "name": "Object Mentor CLI article (more about refactoring and TDD)"
+      "urlIsDead" : "true",
+      "name": "Object Mentor CLI article",
+      "junk": " (more about refactoring and TDD)"
     },
     {
       "id": "optional",
