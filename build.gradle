@@ -1,5 +1,12 @@
+// Targets:
+//    generateAll (default) --
+//    generateListHtml
+//    generateReadme
+
+
 apply plugin: 'base'
 
+defaultTasks "generateAll"
 
 def commonOutputDirectory = "${project.buildDir}/templateOutput/"
 

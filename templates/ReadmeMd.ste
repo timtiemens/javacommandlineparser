@@ -78,6 +78,16 @@ Below is a table showing Java command-line parsing libraries, sorted by name.  "
 %>
 
 
+Important Features in Command-Line Parsing Library
+--------------------------------------------------
+* API uses annotations, not key-value
+* Generates help
+* Short (-v) and Long (--verbose) parsing to same field
+* Sub-commands (git add ...), can have their own options
+* License (i.e. not GPL)
+* Does not depend on other libraries
+* Java version
+
 
 References
 ----------
@@ -100,3 +110,5 @@ References
     <http://jewelcli.lexicalscope.com/related.html>
 * Compare JCommander and picoli
    <https://java.libhunt.com/compare-picocli-vs-jcommander?rel=cmp-lib>
+* Picoli alternatives list and feature charts
+   <https://github.com/remkop/picocli/wiki/CLI-Comparison>
