@@ -41,7 +41,7 @@ Below is a table showing Java command-line parsing libraries, sorted by name.  "
 |[jargp](http://jargp.sourceforge.net/)||java|||
 |[JArgs](http://jargs.sourceforge.net/)||java||X|single "parse" call with array of options, key is an Option object
 |[java-getopt](http://www.urbanophile.com/arenn/hacking/download.html)||java|||
-|[jbock](https://github.com/h908714124/jbock)||java|X||
+|[jbock](https://github.com/jbock-java/jbock)||java|X||
 |[JCLAP](http://www.snaq.net/java/JCLAP/)||java|||
 |[jcmdline](http://jcmdline.sourceforge.net/)||java|||
 |[JCommander](http://jcommander.org/)|1|java|X||good documentation, custom parser, validation
